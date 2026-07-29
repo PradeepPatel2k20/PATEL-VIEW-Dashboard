@@ -1,4 +1,4 @@
-#  VIEW-VISIBIILITY,INSIGTHS & ENTERPRISE WATCH
+# Platform Version Tracker — Altudo VIEW
 
 A production-ready Next.js 15 (App Router) dashboard for tracking platform versions,
 release notes, security advisories, and support lifecycles across your tech stack —
@@ -18,7 +18,9 @@ npm run dev                         # http://localhost:3000
 
 Default seeded credentials (from `.env.local.example` — **change before real use**):
 
-
+```
+username: admin
+password: ChangeMe123!
 ```
 
 To seed a different password:

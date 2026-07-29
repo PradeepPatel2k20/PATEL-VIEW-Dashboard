@@ -1,5 +1,12 @@
 export type Urgency = "urgent" | "watch" | "continuous" | "stable";
 
+export interface ClosestItem {
+  item: string;
+  url: string;
+  date: string;
+  why: string;
+}
+
 export interface Platform {
   id: string;
   productName: string;
@@ -24,6 +31,11 @@ export interface Platform {
   order: number;
   urgency: Urgency;
   urgencyNote: string;
+  /** The single release-notes entry closest to today's date, extracted from the
+   *  platform's own release-notes page — shown as a clickable headline on the card. */
+  closestReleaseNote?: ClosestItem;
+  /** Same idea, but from the platform's security-advisory / bulletin page. */
+  closestSecurityItem?: ClosestItem;
   createdAt: string;
   updatedAt: string;
 }

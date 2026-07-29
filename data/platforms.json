@@ -19,7 +19,7 @@
       "DXP",
       "watch"
     ],
-    "description": "On-prem/PaaS DXP — XP & XM editions",
+    "description": "On-prem/PaaS DXP \u2014 XP & XM editions",
     "notes": "10.0/10.1 Extended Support ends 2026",
     "enabled": true,
     "urgency": "watch",
@@ -27,7 +27,19 @@
     "id": "sitecore",
     "order": 0,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "Sitecore Experience Platform 10.4 Update-1 (latest downloadable build in Mainstream Support)",
+      "url": "https://developers.sitecore.com/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104_Update1",
+      "date": "Current release",
+      "why": "Latest cumulative build in Mainstream Support \u2014 bundles the most recent hotfixes for XP/XM ahead of the shift to paid Extended Support in June 2026."
+    },
+    "closestSecurityItem": {
+      "item": "Sitecore Product Support Lifecycle \u2014 support/security-patch tiers updated",
+      "url": "https://support.sitecore.com/kb",
+      "date": "Updated May 19, 2026",
+      "why": "Defines which support/security-patch tier each Sitecore version currently sits in \u2014 worth checking before assuming a version still gets free patches."
+    }
   },
   {
     "productName": "Sitecore XM Cloud",
@@ -57,7 +69,19 @@
     "id": "sitecore-xm-cloud",
     "order": 1,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "Content SDK 2.2 released \u2014 on-demand static revalidation, draft component workflows",
+      "url": "https://developers.sitecore.com/changelog/sitecoreai/30062026/content-sdk-2.2-released-with-on-demand-static-revalidation-and-other-improvements",
+      "date": "Jun 30, 2026",
+      "why": "Adds on-demand static revalidation and draft component workflows, so published content can refresh without a full redeploy."
+    },
+    "closestSecurityItem": {
+      "item": "SitecoreAI / Experience Platform knowledge base \u2014 most recently updated articles",
+      "url": "https://support.sitecore.com/kb",
+      "date": "Updated Jul 21, 2026",
+      "why": "SitecoreAI issues are tracked in the same knowledge base as Sitecore XP \u2014 there's no separate SaaS-only security feed."
+    }
   },
   {
     "productName": "Contentful",
@@ -87,7 +111,19 @@
     "id": "contentful",
     "order": 2,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "Bulk entry operations released on the Content Management API",
+      "url": "https://www.contentful.com/developers/changelog/",
+      "date": "Jun 14, 2026",
+      "why": "Lets teams update many entries in a single Content Management API call instead of looping one-by-one \u2014 cuts API call volume for large content operations."
+    },
+    "closestSecurityItem": {
+      "item": "No public CVE-style advisory feed \u2014 security posture tracked via status/incident history",
+      "url": "https://www.contentfulstatus.com/",
+      "date": "Checked Jul 29, 2026",
+      "why": "Contentful doesn't publish CVE-numbered advisories publicly; incident history and uptime are tracked on the status page instead."
+    }
   },
   {
     "productName": "Optimizely",
@@ -109,7 +145,7 @@
       "DXP",
       "watch"
     ],
-    "description": "Composable DXP — CMS, Commerce, Experimentation",
+    "description": "Composable DXP \u2014 CMS, Commerce, Experimentation",
     "notes": "CMS 11 already out of support",
     "enabled": true,
     "urgency": "watch",
@@ -117,7 +153,19 @@
     "id": "optimizely",
     "order": 3,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "CMS 13 general-availability release notes \u2014 Visual Builder, Embedded DAM, AI capabilities",
+      "url": "https://support.optimizely.com/hc/en-us/articles/33309043090189-2026-Optimizely-CMS-12-release-notes",
+      "date": "Mar 31, 2026",
+      "why": "First GA release with the new Visual Builder and Embedded DAM \u2014 also the release that pushed CMS 11 out of the two-version support window."
+    },
+    "closestSecurityItem": {
+      "item": "CMS (SaaS) Preview3 REST API deprecation \u2014 retires Aug 1, 2026",
+      "url": "https://support.optimizely.com/hc/en-us/articles/27677034133645-2026-CMS-SaaS-release-notes",
+      "date": "Notice active through Aug 1, 2026",
+      "why": "Legacy CMS SaaS REST API being retired Aug 1, 2026 \u2014 integrations still calling Preview3 endpoints need to move to REST API v1 before then."
+    }
   },
   {
     "productName": "Drupal",
@@ -147,7 +195,19 @@
     "id": "drupal",
     "order": 4,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "Drupal 11.4.4 / 11.3.14 / 10.6.13 released (bundled security + bugfix)",
+      "url": "https://www.drupal.org/list-changes/drupal",
+      "date": "Jul 15, 2026",
+      "why": "Bundled security-plus-bugfix release shipped simultaneously across all three currently supported minor branches (11.4, 11.3, 10.6)."
+    },
+    "closestSecurityItem": {
+      "item": "SA-CORE-2026-010 \u2014 Information disclosure in Image module derivatives (Moderately critical)",
+      "url": "https://www.drupal.org/sa-core-2026-010",
+      "date": "Jul 15, 2026",
+      "why": "Moderately critical information-disclosure issue in the Image module's derivative handling \u2014 affects sites serving private derived images through non-core file schemes."
+    }
   },
   {
     "productName": "Next.js",
@@ -177,7 +237,19 @@
     "id": "nextjs",
     "order": 5,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "v16.2.6 \u2014 coordinated security release with backported bug fixes",
+      "url": "https://github.com/vercel/next.js/releases/tag/v16.2.6",
+      "date": "May 7, 2026 (confirm github.com for newer canary/stable tags)",
+      "why": "Coordinated release patching 13 security advisories at once \u2014 the first release under Next.js's newly formalized security-release process."
+    },
+    "closestSecurityItem": {
+      "item": "GHSA-8h8q-6873-q5fj \u2014 Denial of Service with Server Components (High)",
+      "url": "https://github.com/vercel/next.js/security/advisories/GHSA-8h8q-6873-q5fj",
+      "date": "May 7, 2026",
+      "why": "High-severity denial-of-service in React Server Components, tracked upstream as a React CVE \u2014 affects apps using Server Functions or Cache Components."
+    }
   },
   {
     "productName": "React",
@@ -207,7 +279,19 @@
     "id": "react",
     "order": 6,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "The React Foundation launches under the Linux Foundation",
+      "url": "https://react.dev/blog/2026/02/24/the-react-foundation",
+      "date": "Feb 24, 2026",
+      "why": "Governance moved to the Linux Foundation \u2014 a structural change rather than a code release, signaling React's long-term stewardship model."
+    },
+    "closestSecurityItem": {
+      "item": "v19.2.8 patch release",
+      "url": "https://github.com/facebook/react/releases/tag/v19.2.8",
+      "date": "Jul 21, 2026",
+      "why": "Routine patch release; no open advisory attached to this build at time of research \u2014 worth a quick check on GitHub for anything filed since."
+    }
   },
   {
     "productName": "Shopify",
@@ -237,7 +321,19 @@
     "id": "shopify",
     "order": 7,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "Admin GraphQL API now errors on invalid metafield filters (2026-10)",
+      "url": "https://shopify.dev/changelog",
+      "date": "Jul 2026",
+      "why": "Tightens the Admin GraphQL API so invalid metafield filters return an error instead of silently returning the wrong results \u2014 test 2026-10 before upgrading if you filter by metafields."
+    },
+    "closestSecurityItem": {
+      "item": "No public CVE-style advisory feed \u2014 platform incidents tracked via status page",
+      "url": "https://www.shopifystatus.com/",
+      "date": "Checked Jul 29, 2026",
+      "why": "No public CVE feed \u2014 Shopify handles disclosure privately, and the status page only reports live incidents, not historical vulnerabilities."
+    }
   },
   {
     "productName": "Vercel",
@@ -267,7 +363,19 @@
     "id": "vercel",
     "order": 8,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "Next.js May 2026 security release \u2014 13 advisories patched",
+      "url": "https://vercel.com/changelog/next-js-may-2026-security-release",
+      "date": "May 7, 2026 (confirm vercel.com/changelog for newer posts)",
+      "why": "Same incident as the Next.js entry above \u2014 Vercel published it because Next.js is Vercel's own framework and the fix shipped through their infrastructure too."
+    },
+    "closestSecurityItem": {
+      "item": "Next.js May 2026 security release (doubles as Vercel's security bulletin for this incident)",
+      "url": "https://vercel.com/changelog/next-js-may-2026-security-release",
+      "date": "May 7, 2026",
+      "why": "Vercel doesn't run a separate CVE program for the hosting platform itself; framework-level advisories (like this one) are the closest equivalent."
+    }
   },
   {
     "productName": "Azure App Service",
@@ -297,7 +405,19 @@
     "id": "azure-app-service",
     "order": 9,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": ".NET 10 (LTS) confirmed fully supported runtime stack on App Service",
+      "url": "https://azure.microsoft.com/updates/",
+      "date": "Searched Jul 29, 2026",
+      "why": "Confirms .NET 10 is fully available as a selectable runtime stack, ahead of .NET 8 reaching End of Support in November 2026."
+    },
+    "closestSecurityItem": {
+      "item": "CVE-2025-55315 \u2014 .NET Security Feature Bypass, mitigated at Front End (load balancer) layer",
+      "url": "https://msrc.microsoft.com/update-guide",
+      "date": "Patched platform-wide",
+      "why": "Mitigated at the platform's Front End (load balancer) layer, so it protects apps even before their own .NET runtime has been individually patched."
+    }
   },
   {
     "productName": "MongoDB",
@@ -327,7 +447,19 @@
     "id": "mongodb",
     "order": 10,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "MongoDB Server 8.3.7 released (Latest Stable line)",
+      "url": "https://www.mongodb.com/docs/manual/release-notes/",
+      "date": "Jul 22, 2026",
+      "why": "Latest patch in the Latest Stable release line \u2014 each major version is supported for 30 months from its General Availability date."
+    },
+    "closestSecurityItem": {
+      "item": "MongoBleed (CVE-2025-14847) \u2014 unauthenticated out-of-bounds read",
+      "url": "https://www.mongodb.com/resources/products/alerts",
+      "date": "Disclosed Dec 2025",
+      "why": "Unauthenticated out-of-bounds read disclosed in December 2025 \u2014 worth confirming your deployment has been patched if you haven't checked recently."
+    }
   },
   {
     "productName": "Node.js",
@@ -357,7 +489,19 @@
     "id": "nodejs",
     "order": 11,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "v26.0.0 (Current) \u2014 Temporal API, V8 14.6, Undici 8",
+      "url": "https://nodejs.org/en/blog/release/v26.0.0",
+      "date": "May 5, 2026",
+      "why": "First release of the v26 Current line \u2014 adds the Temporal API and a newer V8 engine; won't be promoted to LTS until October 2026."
+    },
+    "closestSecurityItem": {
+      "item": "CVE-2026-21717 \u2014 Denial of Service, fixed in 22.22.2",
+      "url": "https://nodejs.org/en/security",
+      "date": "Searched Jul 29, 2026",
+      "why": "Denial-of-service vulnerability fixed in 22.22.2 \u2014 a reminder that even Maintenance LTS lines need active patching, not just security backports."
+    }
   },
   {
     "productName": "Azure DevOps",
@@ -379,7 +523,7 @@
       "DevOps",
       "continuous"
     ],
-    "description": "CI/CD, boards & repos — cloud and on-prem",
+    "description": "CI/CD, boards & repos \u2014 cloud and on-prem",
     "notes": "Modern Lifecycle - continuous support",
     "enabled": true,
     "urgency": "continuous",
@@ -387,7 +531,19 @@
     "id": "azure-devops",
     "order": 12,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "Patch 6 \u2014 build 20.256.37517.1",
+      "url": "https://learn.microsoft.com/en-us/azure/devops/server/release-notes/azuredevopsserver?view=azure-devops",
+      "date": "Jul 21, 2026",
+      "why": "Routine patch under the new Modern Lifecycle Policy \u2014 Azure DevOps Server no longer ships numbered major versions, only continuous patches."
+    },
+    "closestSecurityItem": {
+      "item": "Platform-wide CVEs tracked via Microsoft Security Response Center",
+      "url": "https://msrc.microsoft.com/update-guide",
+      "date": "Ongoing",
+      "why": "Shares Microsoft's platform-wide MSRC advisory feed rather than a dedicated Azure DevOps security page."
+    }
   },
   {
     "productName": "Jira / Confluence",
@@ -417,7 +573,19 @@
     "id": "jira-confluence",
     "order": 13,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "Data Center LTS releases \u2014 Jira Software 10.4 / Confluence 9.2 (Rovo connector, OpenSearch support added)",
+      "url": "https://developer.atlassian.com/cloud/changes/",
+      "date": "Current LTS",
+      "why": "Current Data Center LTS releases, now bundled with a Rovo AI connector and OpenSearch support \u2014 though Data Center itself is in phased retirement through 2029."
+    },
+    "closestSecurityItem": {
+      "item": "Confluence 9.2 (LTS) End of Support bulletin",
+      "url": "https://confluence.atlassian.com/security/security-bulletins-140928.html",
+      "date": "EOS Dec 10, 2026",
+      "why": "Marks when Confluence 9.2 LTS stops receiving security patches \u2014 plan the next LTS upgrade well before this date."
+    }
   },
   {
     "productName": "WordPress",
@@ -447,7 +615,19 @@
     "id": "wordpress",
     "order": 14,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T00:00:00.000Z"
+    "updatedAt": "2026-07-29T00:00:00.000Z",
+    "closestReleaseNote": {
+      "item": "WordPress 7.0 Release Candidate 3 (final pre-GA build; 7.0 shipped May 20, 2026)",
+      "url": "https://wordpress.org/news/2026/05/wordpress-7-0-release-candidate-3/",
+      "date": "May 8, 2026",
+      "why": "Last public build before WordPress 7.0's General Availability on May 20, 2026 \u2014 real-time collaboration was pulled from this release and postponed to a later update."
+    },
+    "closestSecurityItem": {
+      "item": "WordPress 6.9.4 \u2014 follow-up release ensuring all 10 security fixes from 6.9.2/6.9.3 fully applied",
+      "url": "https://wordpress.org/news/2026/03/wordpress-6-9-4-release/",
+      "date": "Mar 11, 2026",
+      "why": "Follow-up fix after 6.9.2/6.9.3 didn't fully apply all 10 originally-announced security patches \u2014 a reminder to confirm patches actually landed, not just that an update ran."
+    }
   },
   {
     "productName": "Asana",
@@ -477,6 +657,18 @@
     "id": "asana",
     "order": 15,
     "createdAt": "2026-07-29T00:00:00.000Z",
-    "updatedAt": "2026-07-29T11:07:02.115Z"
+    "updatedAt": "2026-07-29T11:07:02.115Z",
+    "closestReleaseNote": {
+      "item": "June 2026 release notes \u2014 Assignee sharing confirmation, Microsoft 365 SSO",
+      "url": "https://forum.asana.com/t/asana-release-notes-june-2026/1147310",
+      "date": "Jun 2026",
+      "why": "Adds Microsoft 365 SSO and a confirmation prompt before sharing a task with someone who doesn't already have access."
+    },
+    "closestSecurityItem": {
+      "item": "SOC 2 Type 2 + HIPAA report published (Feb 2025\u2013Jan 2026 period); ISO 27001:2022 surveillance passed",
+      "url": "https://trustcenter.asana.com/",
+      "date": "Searched Jul 29, 2026",
+      "why": "Asana doesn't publish CVE-style advisories publicly; current SOC 2 / HIPAA / ISO certifications are the closest public security assurance available."
+    }
   }
 ]
