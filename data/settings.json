@@ -1,0 +1,21 @@
+{
+  "refreshIntervalMinutes": 5,
+  "theme": "dark",
+  "defaultView": "cards",
+  "appName": "Altudo VIEW — Platform Tracker",
+  "logoUrl": "/logo.png",
+  "sessionTimeoutMinutes": 60,
+  "defaultCategory": "All",
+  "sidebarDefaultCollapsed": false,
+  "animationsEnabled": true,
+  "dateFormat": "MMM d, yyyy",
+  "timezone": "Asia/Kolkata",
+  "tablePageSize": 25,
+  "newReleaseThresholdDays": 30,
+  "exportFormats": [
+    "csv",
+    "json",
+    "xlsx",
+    "pdf"
+  ]
+}

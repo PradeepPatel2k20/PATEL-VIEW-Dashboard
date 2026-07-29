@@ -1,0 +1,139 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronRight, FileText, ShieldCheck, Map, Activity, ExternalLink, Sparkles } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import type { Platform } from "@/types/platform";
+import { URGENCY_META } from "@/lib/constants";
+import { cn, isRecentRelease, looksLikeUrl } from "@/lib/utils";
+
+interface PlatformCardProps {
+  platform: Platform;
+  animationsEnabled: boolean;
+  newReleaseThresholdDays: number;
+}
+
+export function PlatformCard({ platform: p, animationsEnabled, newReleaseThresholdDays }: PlatformCardProps) {
+  const [open, setOpen] = useState(false);
+  const meta = URGENCY_META[p.urgency] ?? URGENCY_META.watch;
+  const isNew = isRecentRelease(p.latestReleaseDate, newReleaseThresholdDays);
+
+  return (
+    <Card className="overflow-hidden">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="grid w-full grid-cols-[18px_1.3fr_1fr_1fr_90px] items-start gap-4 p-4 text-left focus-ring md:grid-cols-[18px_1.3fr_1fr_1fr_90px]"
+        aria-expanded={open}
+      >
+        <ChevronRight className={cn("mt-0.5 h-3 w-3 flex-none text-textDim transition-transform", open && "rotate-90 text-accent")} />
+
+        <div className="min-w-0">
+          <div className="flex items-center gap-2">
+            <span className="font-display text-sm font-semibold text-textPrimary">{p.productName}</span>
+            {isNew && (
+              <span className="inline-flex items-center gap-1 rounded-full border border-accent/35 bg-accent/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-accent">
+                <Sparkles className="h-2.5 w-2.5" /> New
+              </span>
+            )}
+          </div>
+          <div className="mt-0.5 font-mono text-[10.5px] text-textDim">{p.category} · {p.vendor}</div>
+          <div className="mt-1.5 hidden text-[11px] leading-snug text-textMuted md:block">{p.description}</div>
+        </div>
+
+        <div className="hidden md:block">
+          <div className="text-[9px] uppercase tracking-wide text-textDim">Current / Latest</div>
+          <div className="mt-1 font-mono text-[11.5px] text-textMuted">{p.currentVersion}</div>
+        </div>
+
+        <div className="hidden md:block">
+          <div className="text-[9px] uppercase tracking-wide text-textDim">End of support</div>
+          <div className="mt-1 font-mono text-[11px] text-textMuted line-clamp-2">{p.supportLifecycle}</div>
+        </div>
+
+        <div className="flex justify-end">
+          <Badge variant={meta.className as "urgent" | "watch" | "continuous" | "stable"}>{meta.label}</Badge>
+        </div>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={animationsEnabled ? { height: 0, opacity: 0 } : false}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.22 }}
+            className="overflow-hidden border-t border-borderSoft"
+          >
+            <div className="p-5">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <InfoBox label="Previous version" value={p.previousVersion || "—"} />
+                <InfoBox label="Release frequency" value={p.releaseFrequency || "—"} />
+                <InfoBox label="Priority" value={p.priority} />
+              </div>
+
+              {p.notes && (
+                <div className="mt-3 rounded-md border border-borderSoft bg-surface2 p-3 text-[12px] leading-relaxed text-textMuted">
+                  {p.notes}
+                </div>
+              )}
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                <LinkChip href={p.releaseNotesUrl} icon={FileText} label="Release notes" />
+                <LinkChip href={p.securityAdvisoryUrl} icon={ShieldCheck} label="Security advisory" />
+                <LinkChip href={p.documentationUrl} icon={Map} label="Roadmap / docs" />
+                <LinkChip href={p.statusPageUrl} icon={Activity} label="Status page" />
+              </div>
+
+              {p.tags.length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {p.tags.map((t) => (
+                    <span key={t} className="rounded-full bg-surface2 px-2 py-0.5 font-mono text-[10px] text-textDim">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </Card>
+  );
+}
+
+function InfoBox({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-md border border-borderSoft bg-surface2 p-3">
+      <div className="text-[9px] uppercase tracking-wide text-textDim">{label}</div>
+      <div className="mt-1 text-[12px] capitalize text-textPrimary">{value}</div>
+    </div>
+  );
+}
+
+function LinkChip({ href, icon: Icon, label }: { href: string; icon: typeof FileText; label: string }) {
+  if (!href) return null;
+
+  if (!looksLikeUrl(href)) {
+    return (
+      <span
+        title={href}
+        className="inline-flex max-w-[260px] items-center gap-1.5 truncate rounded-md border border-border bg-bg px-2.5 py-1.5 font-mono text-[11px] text-textDim"
+      >
+        <Icon className="h-3 w-3 flex-none" /> <span className="truncate">{href}</span>
+      </span>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 rounded-md border border-border bg-bg px-2.5 py-1.5 font-mono text-[11px] text-blue transition-colors hover:border-blue focus-ring"
+    >
+      <Icon className="h-3 w-3" /> {label} <ExternalLink className="h-2.5 w-2.5 opacity-60" />
+    </a>
+  );
+}

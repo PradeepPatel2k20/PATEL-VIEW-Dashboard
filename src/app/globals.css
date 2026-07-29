@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Dark theme (default) — RGB triplets so Tailwind's <alpha-value> opacity
+     modifiers (e.g. bg-danger/10) work with CSS variables. */
+  --bg: 11 18 32;
+  --surface: 17 27 44;
+  --surface2: 22 35 58;
+  --border: 34 50 82;
+  --border-soft: 26 39 64;
+  --accent: 62 214 192;
+  --accent-dim: 42 149 135;
+  --orange: 240 118 43;
+  --blue: 91 141 239;
+  --success: 74 222 128;
+  --warning: 245 185 66;
+  --danger: 242 85 90;
+  --text-primary: 233 239 249;
+  --text-muted: 143 163 190;
+  --text-dim: 100 128 160;
+}
+
+[data-theme="light"] {
+  --bg: 248 250 252;
+  --surface: 255 255 255;
+  --surface2: 241 245 249;
+  --border: 226 232 240;
+  --border-soft: 233 238 244;
+  --accent: 13 148 136;
+  --accent-dim: 15 118 110;
+  --orange: 234 88 12;
+  --blue: 37 99 235;
+  --success: 22 163 74;
+  --warning: 180 83 9;
+  --danger: 220 38 38;
+  --text-primary: 15 23 42;
+  --text-muted: 71 85 105;
+  --text-dim: 100 116 139;
+}
+
+html, body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--text-primary));
+}
+
+* {
+  border-color: rgb(var(--border-soft));
+}
+
+/* Custom scrollbars — matches dashboard theme, cross-browser */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--accent)) rgb(var(--surface));
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: rgb(var(--surface));
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--accent-dim));
+  border-radius: 8px;
+  border: 2px solid rgb(var(--surface));
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(var(--accent));
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white !important; color: black !important; }
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 2px;
+}
