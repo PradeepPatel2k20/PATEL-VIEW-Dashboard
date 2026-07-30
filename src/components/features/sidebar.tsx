@@ -60,8 +60,8 @@ export function Sidebar({
             <Image
               src="/view-logo-light.png"
               alt="Altudo VIEW — Visibility, Insights & Enterprise Watch"
-              width={286}
-              height={104}
+              width={1490}
+              height={725}
               className="h-auto w-full object-contain"
               priority
             />
