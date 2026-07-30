@@ -60,13 +60,20 @@ export function Sidebar({
             <Image
               src="/view-logo-light.png"
               alt="Altudo VIEW — Visibility, Insights & Enterprise Watch"
-              width={220}
-              height={80}
-              className="h-auto w-full max-w-[210px] object-contain"
+              width={286}
+              height={104}
+              className="h-auto w-full object-contain"
               priority
             />
           ) : (
-            <Image src="/logo.png" alt="Altudo logo" width={96} height={30} className="h-6 w-auto object-contain" priority />
+            <Image
+              src="/logo.png"
+              alt="Altudo logo"
+              width={125}
+              height={39}
+              className="h-auto w-full object-contain"
+              priority
+            />
           )}
         </div>
         {!collapsed && (
