@@ -1,17 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { RefreshCw, Download, ChevronDown } from "lucide-react";
+import { RefreshCw } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/features/theme-toggle";
+import { useTheme } from "@/hooks/use-theme";
 import { timeAgo } from "@/lib/utils";
 
 interface DashboardHeaderProps {
@@ -22,6 +17,8 @@ interface DashboardHeaderProps {
 
 export function DashboardHeader({ lastRefreshedAt, onRefresh, isFetching }: DashboardHeaderProps) {
   const [, forceTick] = useState(0);
+  const theme = useTheme();
+  const isLight = theme === "light";
 
   // re-render every 20s so "time ago" stays fresh without a full data refetch
   useState(() => {
@@ -34,11 +31,11 @@ export function DashboardHeader({ lastRefreshedAt, onRefresh, isFetching }: Dash
       <div className="flex flex-wrap items-center justify-between gap-4 px-6 py-3.5">
         <div className="flex items-center gap-1">
           <Image
-            src="/view-logo.png"
+            src={isLight ? "/view-logo-light.png" : "/view-logo.png"}
             alt="Altudo VIEW — Visibility, Insights & Enterprise Watch"
-            width={420}
-            height={150}
-            className="h-11 w-auto object-contain sm:h-12"
+            width={isLight ? 720 : 600}
+            height={isLight ? 160 : 217}
+            className="h-14 w-auto object-contain sm:h-16 md:h-[4.5rem]"
             priority
           />
         </div>
@@ -50,7 +47,6 @@ export function DashboardHeader({ lastRefreshedAt, onRefresh, isFetching }: Dash
             </span>
           </div>
 
-          <ExportMenu />
           <ThemeToggle />
 
           <Button size="sm" onClick={onRefresh} disabled={isFetching}>
@@ -66,41 +62,5 @@ export function DashboardHeader({ lastRefreshedAt, onRefresh, isFetching }: Dash
         </div>
       </div>
     </header>
-  );
-}
-
-function ExportMenu() {
-  const formats: { key: string; label: string }[] = [
-    { key: "csv", label: "Export as CSV" },
-    { key: "json", label: "Export as JSON" },
-    { key: "xlsx", label: "Export as Excel" },
-    { key: "pdf", label: "Export as PDF (print)" },
-  ];
-
-  const handleExport = (key: string) => {
-    if (key === "pdf") {
-      window.print();
-      return;
-    }
-    window.location.href = `/api/export?format=${key}`;
-  };
-
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button size="sm" variant="secondary">
-          <Download className="h-3.5 w-3.5" />
-          Export
-          <ChevronDown className="h-3 w-3 opacity-60" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        {formats.map((f) => (
-          <DropdownMenuItem key={f.key} onSelect={() => handleExport(f.key)}>
-            {f.label}
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
   );
 }
