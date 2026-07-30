@@ -33,9 +33,9 @@ export function DashboardHeader({ lastRefreshedAt, onRefresh, isFetching }: Dash
           <Image
             src={isLight ? "/view-logo-light.png" : "/view-logo.png"}
             alt="Altudo VIEW — Visibility, Insights & Enterprise Watch"
-            width={isLight ? 936 : 780}
-            height={isLight ? 208 : 282}
-            className="h-[73px] w-auto object-contain sm:h-[83px] md:h-[94px]"
+            width={isLight ? 1490 : 1501}
+            height={isLight ? 725 : 543}
+            className="w-[202px] h-auto object-contain sm:w-[229px] md:w-[260px]"
             priority
           />
         </div>
