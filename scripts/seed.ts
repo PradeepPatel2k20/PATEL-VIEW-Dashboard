@@ -4,8 +4,8 @@ import { writeFile } from "fs/promises";
 import path from "path";
 
 async function main() {
-  const username = process.env.SEED_ADMIN_USERNAME || "pradeeppatel2k26";
-  const password = process.env.SEED_ADMIN_PASSWORD || "Mynameis#12";
+  const username = process.env.SEED_ADMIN_USERNAME || "admin";
+  const password = process.env.SEED_ADMIN_PASSWORD || "admin";
 
   const passwordHash = await bcrypt.hash(password, 12);
 
