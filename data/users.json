@@ -1,10 +1,10 @@
 [
   {
     "username": "admin",
-    "passwordHash": "$2a$12$B4LKLWdgBsZMml71FhtC/.dvd0iea0ZQFqS.oJh4Jf35T6GAbeNSi",
+    "passwordHash": "$2a$12$K9KA6JwjLSn2.McZw6NvreH/fj1TApqo/3umelDonhU4CgreL1uXu",
     "role": "admin",
-    "createdAt": "2026-08-02T12:59:44.230Z",
-    "lastLoginAt": "2026-08-02T12:59:45.879Z",
+    "createdAt": "2026-07-29T11:02:40.887Z",
+    "lastLoginAt": "2026-07-29T11:23:30.952Z",
     "failedLoginAttempts": 0,
     "lockedUntil": null
   }

@@ -19,11 +19,10 @@ function toBase64Url(bytes: Uint8Array): string {
   return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 }
 
-function fromBase64Url(input: string): Uint8Array<ArrayBuffer> {
+function fromBase64Url(input: string): Uint8Array {
   const padded = input.replace(/-/g, "+").replace(/_/g, "/").padEnd(input.length + ((4 - (input.length % 4)) % 4), "=");
   const binary = atob(padded);
-  const buffer = new ArrayBuffer(binary.length);
-  const bytes = new Uint8Array(buffer);
+  const bytes = new Uint8Array(binary.length);
   for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
   return bytes;
 }
@@ -47,7 +46,7 @@ async function verify(data: string, signature: string): Promise<boolean> {
   try {
     const sigBytes = fromBase64Url(signature);
     const dataBytes = new TextEncoder().encode(data);
-    return await crypto.subtle.verify("HMAC", key, sigBytes, dataBytes);
+    return await crypto.subtle.verify("HMAC", key, sigBytes.buffer.slice(sigBytes.byteOffset, sigBytes.byteOffset + sigBytes.byteLength) as ArrayBuffer, dataBytes);
   } catch {
     return false;
   }

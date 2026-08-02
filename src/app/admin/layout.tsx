@@ -10,10 +10,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
   const router = useRouter();
 
-  if (pathname === "/admin/login") {
-    return <>{children}</>;
-  }
-
   async function handleLogout() {
     await fetch("/api/logout", { method: "POST" });
     toast.success("Signed out");

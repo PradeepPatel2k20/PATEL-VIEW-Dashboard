@@ -46,9 +46,7 @@ function LoginForm() {
     }
 
     toast.success("Signed in");
-    const from = params.get("from");
-    const redirectTo = from && from.startsWith("/") && !from.startsWith("//") ? from : "/admin";
-    router.push(redirectTo);
+    router.push(params.get("from") || "/admin");
   }
 
   return (
