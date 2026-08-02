@@ -46,7 +46,7 @@ async function verify(data: string, signature: string): Promise<boolean> {
   try {
     const sigBytes = fromBase64Url(signature);
     const dataBytes = new TextEncoder().encode(data);
-    return await crypto.subtle.verify("HMAC", key, sigBytes, dataBytes);
+    return await crypto.subtle.verify("HMAC", key, sigBytes.buffer.slice(sigBytes.byteOffset, sigBytes.byteOffset + sigBytes.byteLength) as ArrayBuffer, dataBytes);
   } catch {
     return false;
   }

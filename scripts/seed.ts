@@ -4,8 +4,14 @@ import { writeFile } from "fs/promises";
 import path from "path";
 
 async function main() {
-  const username = process.env.SEED_ADMIN_USERNAME || "pradeeppatel2k26";
-  const password = process.env.SEED_ADMIN_PASSWORD || "Mynamis #12";
+  const username = process.env.SEED_ADMIN_USERNAME || "admin";
+  const password = process.env.SEED_ADMIN_PASSWORD || "ChangeMe123!";
+
+  if (password === "ChangeMe123!") {
+    console.warn(
+      "\n⚠️  Using the DEFAULT seed password. Set SEED_ADMIN_PASSWORD before running in anything but local dev.\n"
+    );
+  }
 
   const passwordHash = await bcrypt.hash(password, 12);
 
