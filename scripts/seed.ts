@@ -5,7 +5,7 @@ import path from "path";
 
 async function main() {
   const username = process.env.SEED_ADMIN_USERNAME || "pradeeppatel2k26";
-  const password = process.env.SEED_ADMIN_PASSWORD || "Mynamis #12";
+  const password = process.env.SEED_ADMIN_PASSWORD || "Mynameis#12";
 
   const passwordHash = await bcrypt.hash(password, 12);
 

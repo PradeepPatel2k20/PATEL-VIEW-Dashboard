@@ -1,11 +1,11 @@
 [
   {
     "username": "pradeeppatel2k26",
-    "passwordHash": "$2a$12$bt/zTVQfHvuCIhirCNZU9.Kq1x.M4LQKg9h7o3hXpie63kRZnTOri",
+    "passwordHash": "$2a$12$uZ4aomgDlXNz1TnjgL/XUuwzC/svf8hWRpZjrvdouQ/d8xbJqpha6",
     "role": "admin",
-    "createdAt": "2026-08-02T12:17:00.000Z",
-    "lastLoginAt": "2026-08-02T12:20:28.427Z",
-    "failedLoginAttempts": 0,
+    "createdAt": "2026-08-02T12:42:16.497Z",
+    "lastLoginAt": "2026-08-02T12:42:18.170Z",
+    "failedLoginAttempts": 1,
     "lockedUntil": null
   }
 ]

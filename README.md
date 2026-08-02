@@ -20,7 +20,7 @@ Default seeded credentials (from `.env.local.example` — **change before real u
 
 ```
 username: pradeeppatel2k26
-password: Mynamis #12
+password: Mynameis#12
 ```
 
 To seed a different password:
