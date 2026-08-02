@@ -19,8 +19,7 @@ npm run dev                         # http://localhost:3000
 Default seeded credentials (from `.env.local.example` — **change before real use**):
 
 ```
-username: pradeeppatel2k26
-password: Mynameis#12
+See `.env.local.example` for the seeded username and password.
 ```
 
 To seed a different password:
